@@ -1,0 +1,29 @@
+plugins {
+    id 'groovy'
+    id 'eclipse'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java { srcDirs = [] }
+        groovy { srcDir 'src' }
+    }
+    test {
+        java { srcDirs = [] }
+        groovy { srcDir 'test' }
+    }
+}
+
+tasks.withType(Wrapper) {
+    gradleVersion = '8.5'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.apache.groovy/groovy-all
+    implementation 'org.apache.groovy:groovy-all:4.0.16'
+    testImplementation "junit:junit:4.13.2" // Updated JUnit version
+}
