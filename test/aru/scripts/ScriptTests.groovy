@@ -80,4 +80,9 @@ class ScriptTests {
         assertEquals ("3.10", lastMajorMinorVersion)
     }
 
+    @Test
+    void testStringProcessingAssert() {
+        shell.evaluate(new File("src/aru/scripts/strings/string_processing.groovy"))
+    }
+
 }
